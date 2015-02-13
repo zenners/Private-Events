@@ -1,0 +1,27 @@
+
+<div class="col-sm-6">
+	<h1>Upcoming events</h1>
+	<% @upcoming.each do |event| %>
+		<h1> <%= link_to (event.title), event %> </h1>
+		<p> <%= event.location %> </p>
+		<p> <%= event.description %> </p>
+		<p> <%= event.date %> </p>
+		<p> Created by <%= event.creator.email %> </p>
+	<% end %>
+</div>
+<div class="col-sm-6">
+	<h1>Past Events</h1>
+	<% @past.each do |event| %>
+		<h1> <%= link_to (event.title), event %> </h1>
+		<p> <%= event.location %> </p>
+		<p> <%= event.description %> </p>
+		<p> <%= event.date %> </p>
+		<p> Created by <%= event.creator.email %> </p>
+	<% end %>
+</div>
+
+<div>
+	
+
+
+</div>

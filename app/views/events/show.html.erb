@@ -1,0 +1,13 @@
+<%= render 'attend_form' %>
+
+<h1><%= @event.title %> </h1>
+<p> Created by:  <%= @event.creator.email %> </p>
+<ol>
+	<% @event.attendees.each do |attendee| %>
+		<li>
+			<%= link_to attendee.email, attendee %>
+		</li>
+	<% end %>
+</ol>
+<%= link_to 'Back', root_path %>
+

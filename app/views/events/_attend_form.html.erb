@@ -1,0 +1,15 @@
+<% if current_user.attending?(@event) %>
+
+	<%= form_for(current_user.attendings.find_by(attended_event_id: @event.id),
+	             html: { method: :delete }) do |f| %>
+	  <%= f.submit "Cancel", class: "btn btn-large" %>
+	<% end %>
+
+<% else %>
+
+	<%= form_for(current_user.attendings.build(attended_event_id: @event.id)) do |f| %>
+	  <div><%= f.hidden_field :attended_event_id %></div>
+	  <%= f.submit "Attend", class: "btn btn-large btn-primary" %>
+	<% end %>
+
+<% end %>

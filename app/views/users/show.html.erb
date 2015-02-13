@@ -1,0 +1,10 @@
+
+<p><%= @user.email %> </p>
+<dl>
+<% @user.attended_events.each do |event| %>
+	
+	<dt> <%= event.title %></dt>
+	<dd> Description: <%= event.description %> </dd>
+	<dd> Date: <%= event.date %> </dd>
+<% end %>
+</dl>
