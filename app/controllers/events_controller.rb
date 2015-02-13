@@ -30,10 +30,6 @@ class EventsController < ApplicationController
   	params.require(:event).permit(:title, :location, :description, :date)
   end
 
-  def events
-  	@events = Event.all
-  end
-
   def event
   	@event = Event.find(params[:id])
   end

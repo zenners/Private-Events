@@ -9,6 +9,15 @@ class User < ActiveRecord::Base
   has_many :attendings, :foreign_key => :attendee_id
 
 
+  def upcoming_events
+    self.attended_events.upcoming
+  end
+
+  def previous_events
+    self.attended_events.past
+  end
+  
+
   def attending?(event)
     event.attendees.include?(self)
   end
